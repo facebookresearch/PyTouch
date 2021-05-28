@@ -1,0 +1,8 @@
+name: pytouch
+dependencies:
+  - python=3.7.*
+  - pip
+  - pip:
+      - ipython
+      - ipdb
+      - -r file:requirements.txt
