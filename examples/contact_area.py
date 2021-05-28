@@ -7,12 +7,8 @@ from pytouch.tasks import ContactArea
 
 
 def extract_surface_contact():
-    base_img_path = (
-        "./sample_data/touch/no_touch/D00003_collection_1_2020_06_21_19_18_16_4.png"
-    )
-    sample_img_path = (
-        "./sample_data/touch/touch/D00003_collection_1_2020_06_21_19_19_22_0.png"
-    )
+    base_img_path = "./path/to/img/"
+    sample_img_path = "./path/to/img"
 
     base_img = ImageHandler(base_img_path).nparray
     sample_img = ImageHandler(sample_img_path).nparray

@@ -6,17 +6,7 @@ model:
 data:
   _target_: datamodules.touch_detect.TouchDetectDataModule
   path: "~/Development/datasets/PyTouch/touch_detect"
-
-  # exclude: ["video", "D00004", "D00003", "D00025", "D00022", "no_sn", "D00001_gel1","D00001_gel2","D00001_gel3","D00002_gel4","D00002_gel5","D00002_gel6","gel_1","gel_2","gel_3","gel_4","gel_5","gel_6","gel_vga", "gelsight"]
-
-  # exclude: ["D00001_gel1","D00001_gel2","D00001_gel3","D00002_gel4","D00002_gel5","D00002_gel6","gel_1","gel_2","gel_3","gel_4","gel_5","gel_6","gel_vga",]
-
-  # digit med
-  exclude: ["D00002_gel4","D00002_gel5","D00002_gel6","gel_1","gel_2","gel_3","gel_4","gel_5","gel_6","gel_vga", "omnitact", "gelsight"]
-
-  # digit large
-  # exclude: ["gel_1","gel_2","gel_3","gel_4","gel_5","gel_6", "omnitact", "gelsight"]
-  #"gelsight","omnitact"]
+  exclude: []
   transform:
     scales: [64, 64]
     mean: [0.485, 0.456, 0.406]
