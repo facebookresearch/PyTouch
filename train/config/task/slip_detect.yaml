@@ -1,0 +1,40 @@
+# @package _global_
+model:
+  _target_: models.slip_detect.SlipDetectionModel
+  pre_trained: True
+  n_classes: 2
+data:
+  _target_: datamodules.slip_detect.SlipDetectDataModule
+  path:
+  sample_duration: 32
+  transform:
+    scales: [1.0, 0.841, 0.707, 0.595, 0.500]
+    mean: [0.374, 0.391, 0.377]
+    std: [0.0750, 0.0751, 0.0736]
+
+optimizer:
+  type: "Adam"
+  lr: 0.00847
+  lr_patience: 5
+  weight_decay: 1.0115995395401329e-08
+training:
+  seed: 42
+  batch_size: 64
+  n_threads: 12
+  gpu_ids: 1
+  n_epochs: 100
+  train_val_ratio: 0.75
+  pin_memory: 1
+checkpoints:
+  path: "./checkpoints/"
+  last_epoch: "last_epoch.chkpt"
+  temp_epoch: "last_epoch.chkpt.tmp"
+  monitor: "val_loss"
+  mode: "min"
+  save_top_k: 10
+  restore_best: 1
+  csv_file_name: "training_log.csv"
+  save_weights_only: True
+general:
+  verbose: True
+  tb_log_path: "./tb_logs/"
