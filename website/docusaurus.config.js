@@ -12,7 +12,7 @@ module.exports = {
   title: 'PyTouch',
   tagline: 'A Machine Learning Library for Touch Processing',
   url: 'https://www.touch-sensing.org/',
-  baseUrl: '/',
+  baseUrl: '/PyTouch/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
