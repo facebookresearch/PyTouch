@@ -39,6 +39,7 @@ setup(
     author_email="lambetam@fb.com, rcalandra@fb.com",
     keywords=["science"],
     long_description=read("README.md"),
+    long_description_content_type="text/markdown",
     license="LICENSE",
     packages=find_packages(),
     install_requires=install_requires,
