@@ -30,7 +30,7 @@
 ### Stable
 
 **PyTouch 0.4.0** is a beta version of PyTouch.
-- [Documentation](https://xyz/docs/intro)
+- [Documentation](https://facebookresearch.github.io/PyTouch/)
 - Installation : `pip install pytouch --upgrade`
 
 ## License
@@ -57,4 +57,3 @@ If you use PyTouch in your research please cite the corresponding [paper](https:
 
 ## Acknowledgments
 We would like to thank Haozhou Wang for kindly providing the PyPi repository PyTouch.
-
