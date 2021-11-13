@@ -22,7 +22,7 @@
     <i>Check the <a href="https://arxiv.org/abs/2105.12791">corresponding paper</a> for more information.</i>
 </p>
 <p align="center">
-    <b>For updates and discussions please join the #PYTOUCH channel at the <a href="www.touch-sensing.org">www.touch-sensing.org</a> community.</b>
+    <b>For updates and discussions please join the #PYTOUCH channel at the <a href="https://www.touch-sensing.org/">www.touch-sensing.org</a> community.</b>
 </p>
 
 ## Releases
