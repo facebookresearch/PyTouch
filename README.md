@@ -29,7 +29,7 @@
 
 ### Stable
 
-**PyTouch 0.4.0** is a beta version of PyTouch.
+**PyTouch 0.4.2** is a beta version of PyTouch.
 - [Documentation](https://facebookresearch.github.io/PyTouch/)
 - Installation : `pip install pytouch --upgrade`
 
