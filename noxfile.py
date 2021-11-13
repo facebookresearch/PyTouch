@@ -5,7 +5,7 @@ import nox
 
 BASE = os.path.abspath(os.path.dirname(__file__))
 
-DEFAULT_PYTHON_VERSIONS = ["3.7", "3.8", "3.9"]
+DEFAULT_PYTHON_VERSIONS = ["3.7", "3.8"]
 
 LINT_SETUP_DEPS = ["black", "flake8", "flake8-copyright", "isort"]
 

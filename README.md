@@ -56,4 +56,5 @@ If you use PyTouch in your research please cite the corresponding [paper](https:
 ```
 
 ## Acknowledgments
-We would like to thank Haozhou Wang for kindly providing the PyPi repository PyTouch.
+
+PyTouch would like to acknowledge the [list of contributors](AUTHORS.md).

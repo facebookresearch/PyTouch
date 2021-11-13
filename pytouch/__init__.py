@@ -5,4 +5,4 @@ from pytouch.base import PyTouch
 from pytouch.common import SensorDataSources
 from pytouch.models import PyTouchZoo
 
-__version__ = "0.4.0"
+__version__ = "0.4.2"

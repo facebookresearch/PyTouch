@@ -3,6 +3,8 @@ exclude =
     .git
     ,.nox
     ,__init__.py
+    ,pytouch/models/pix2pix/thirdparty
+    ,train
 max-line-length = 119
 copyright-check = True
 select = E,F,W,C

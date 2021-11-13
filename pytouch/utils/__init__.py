@@ -3,4 +3,3 @@
 from .model_utils import *
 from .train_utils import *
 from .transforms import *
-from .vis_utils import *

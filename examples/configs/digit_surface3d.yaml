@@ -1,0 +1,36 @@
+## examples/surface_3d.py
+
+dataset:
+  path: "/path/to/dataset"
+  batch_size: 1
+  shuffle: False
+  num_workers: 8
+
+sensor:
+  max_depth: 0.0198 # max depth value (close to avg gel depth)
+  remove_background_depth: True # sets depth>max_depth to 0 which is filtered out in points3d
+
+  T_cam_offset_sim: [[2.22e-16, 2.22e-16, -1.00e+00, 0.00e+00],
+                [-1.00e+00, 0.00e+00, -2.22e-16, 0.00e+00],
+                [0.00e+00, 1.00e+00, 2.22e-16, 1.50e-02],
+                [0.00e+00, 0.00e+00, 0.00e+00, 1.00e+00]]
+
+  # rotation of +90 degrees about x-axis
+  T_cam_offset_real: [[1., 0., 0., 0.],
+                [0., 0., -1, 0.],
+                [0., 1., 0., 0.],
+                [0., 0., 0., 1.]]
+
+  P:  [[2.30940108e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
+       [0.00000000e+00, 1.73205081e+00, 0.00000000e+00, 0.00000000e+00],
+       [0.00000000e+00, 0.00000000e+00, -1.04081633e+00, -2.04081633e-03],
+       [0.00000000e+00, 0.00000000e+00, -1.00000000e+00, 0.00000000e+00]]
+
+  z_near: 0.001
+  z_far: 0.05
+
+  gel min depth: 0.01910434
+  gel_depth_offset: 1e-4
+
+  gel_width: 0.02 # gel width (y-axis) in meters
+  gel_height: 0.03 # gel height (x-axis) in meters

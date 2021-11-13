@@ -14,3 +14,5 @@ class SensorDataSources(Enum):
     VIDEO = "video"
     # Direct input from sensor
     SENSOR = "sensor"
+    # Simulator input
+    SIM = "simulator"

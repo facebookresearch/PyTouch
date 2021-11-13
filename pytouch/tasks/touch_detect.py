@@ -78,12 +78,12 @@ class TouchDetect(nn.Module):
         if train:
             transforms_list.append(transforms.RandomHorizontalFlip())
             transforms_list.append(transforms.RandomVerticalFlip())
-            transforms_list.append(transforms.RandomRotation(degrees=5))
-            transforms_list.append(
-                transforms.ColorJitter(
-                    brightness=0, contrast=0, saturation=0.1, hue=0.3
-                )
-            )
+            # transforms_list.append(transforms.RandomRotation(degrees=5))
+            # transforms_list.append(
+            #     transforms.ColorJitter(
+            #         brightness=0, contrast=0, saturation=0.1, hue=0.3
+            #     )
+            # )
         transforms_list += [
             transforms.ToTensor(),
             transforms.Normalize(mean=data_cfg.mean, std=data_cfg.std),

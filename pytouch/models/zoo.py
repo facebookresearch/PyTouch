@@ -1,5 +1,6 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All rights reserved.
 
+import errno
 import os
 import sys
 from urllib.parse import urljoin, urlparse
@@ -62,6 +63,26 @@ class PyTouchZoo:
 
     def list_models(self):
         return [obj["Key"] for obj in self.objects]
+
+    def download_model_from_zoo(
+        self, model_name, sensor, dst=None, save_local=False, version="pth"
+    ):
+        model_url = self._get_zoo_model_url(model_name, sensor.zoo_name(), version)
+        model_dst = (
+            dst if save_local else os.path.join(hub.get_dir(), "checkpoints", dst)
+        )
+        try:
+            os.makedirs(model_dst)
+        except OSError as e:
+            if e.errno != errno.EEXIST:
+                raise
+        cached_file = os.path.join(
+            model_dst, f"{model_name}_{sensor.zoo_name()}.{version}"
+        )
+        if not os.path.exists(cached_file):
+            sys.stderr.write(f"Downloading: {model_url} to {cached_file}\n")
+            hub.download_url_to_file(model_url, cached_file)
+        return cached_file
 
     def load_model_from_zoo(self, model_name, sensor, version="pth"):
         model_url = self._get_zoo_model_url(model_name, sensor.zoo_name(), version)

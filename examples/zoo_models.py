@@ -12,7 +12,7 @@ def main():
 
     # load DIGIT sensor touch detect model from pytouch zoo
     touch_detect_model = pytouch_zoo.load_model_from_zoo(  # noqa: F841
-        "touchdetect_resnet18", sensors.DigitSensor
+        "touchdetect_resnet", sensors.DigitSensor
     )
 
     # load custom PyTorch-Lightning saved model

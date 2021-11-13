@@ -1,4 +1,5 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All rights reserved.
+import madgrad
 import torch
 import torch.nn as nn
 import torchmetrics
@@ -67,7 +68,8 @@ class TouchDetectionModel(LightningModule):
         )
 
     def configure_optimizers(self):
-        optimF = torch.optim.SGD
+        # optimF = torch.optim.SGD
+        optimF = madgrad.MADGRAD
         optimizer = optimF(self.parameters(), lr=self.cfg.optimizer.lr)
 
         return {
