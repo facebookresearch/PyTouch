@@ -8,6 +8,10 @@ _log = logging.getLogger(__name__)
 
 
 def choose_optimizer(optim_name):
+    r"""
+    Train utility function. It constructs the optimizer's object. 
+    torch.optim package optimizing techniques: Adam’s Method (optim.Adam) and stochastic gradient descent (optim.SGD)  
+    """
     if optim_name == "Adam":
         optimF = optim.Adam
     elif optim_name == "SGD":
