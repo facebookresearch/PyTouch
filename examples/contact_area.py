@@ -38,7 +38,7 @@ def extract_surface_contact_real_time():
     """
     from digit_interface import Digit
     import cv2
-    base_img_path = "/home/shuk/digits2/images/0000/0041.png"
+    base_img_path = "./path/to/img/"
     base_img = ImageHandler(base_img_path).nparray
     # setting up the DIGIT sensor
     digit = Digit("Dxxxxx")  # replace xxxxx with your DIGIT serial number
