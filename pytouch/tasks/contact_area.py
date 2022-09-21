@@ -10,11 +10,12 @@ _log = logging.getLogger(__name__)
 
 class ContactArea:
     def __init__(
-        self, base=None, draw_poly=True, contour_threshold=100, *args, **kwargs
+        self, base=None, draw_poly=True, contour_threshold=100,real_time=False,*args, **kwargs
     ):
         self.base = base
         self.draw_poly = draw_poly
         self.contour_threshold = contour_threshold
+        self.real_time = real_time
 
     def __call__(self, target, base=None):
         base = self.base if base is None else base
@@ -23,13 +24,18 @@ class ContactArea:
         diff = self._diff(target, base)
         diff = self._smooth(diff)
         contours = self._contours(diff)
-        (
-            poly,
-            major_axis,
-            major_axis_end,
-            minor_axis,
-            minor_axis_end,
-        ) = self._compute_contact_area(contours, self.contour_threshold)
+        if self._compute_contact_area(contours, self.contour_threshold) == None and self.real_time==False:
+            raise Exception("No contact area detected.")
+        if self._compute_contact_area(contours, self.contour_threshold) == None and self.real_time==True:
+            return None
+        else:
+            (
+                poly,
+                major_axis,
+                major_axis_end,
+                minor_axis,
+                minor_axis_end,
+            ) = self._compute_contact_area(contours, self.contour_threshold)
         if self.draw_poly:
             self._draw_major_minor(
                 target, poly, major_axis, major_axis_end, minor_axis, minor_axis_end
@@ -104,4 +110,4 @@ class ContactArea:
                 )
                 major_axis_end = 2 * center - major_axis
                 minor_axis_end = 2 * center - minor_axis
-        return poly, major_axis, major_axis_end, minor_axis, minor_axis_end
+                return poly, major_axis, major_axis_end, minor_axis, minor_axis_end
